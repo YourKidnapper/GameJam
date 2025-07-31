@@ -6,8 +6,14 @@ public class SkillData : ScriptableObject
     public string skillName;
     [TextArea] public string description;
     public float cooldown;
-
     public int power;
+    public float multiplier = 1f;
+
+    public int price;
+
     public Sprite icon;
-    public int rarity; // 1 – common, 2 – rare, 3 – epic
+    public int rarity;
+
+    public SkillType type;
+    public bool isPassive;
 }

@@ -10,11 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 161757e3c761d2a45b52b9097afdfeee, type: 3}
-  m_Name: NewSkill
+  m_Name: Acid Bomb
   m_EditorClassIdentifier: 
-  skillName: 
-  description: 
-  cooldown: 0
-  power: 0
-  icon: {fileID: 0}
-  rarity: 0
+  skillName: Acid Boom
+  description: You throw a large orb of acid on your enemy
+  cooldown: 10
+  power: 20
+  multiplier: 1
+  icon: {fileID: -5063555655813669412, guid: 87ad6e7d524def74a8b9c0525e2d96e8, type: 3}
+  rarity: 2
+  type: 0
+  isPassive: 0
