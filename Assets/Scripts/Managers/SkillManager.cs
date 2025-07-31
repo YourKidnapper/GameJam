@@ -42,9 +42,6 @@ public class SkillManager : MonoBehaviour
 
     void Start()
     {
-        Debug.Log($"PlayerHealthSystem: {playerHealthSystem}");
-        Debug.Log($"EnemyHealthSystem: {enemyHealthSystem}");
-        Debug.Log($"UIManager.Instance: {UIManager.Instance}");
         // Прив’язуємо health-системи
         UIManager.Instance.InitHealthBars(playerHealthSystem, enemyHealthSystem);
 
