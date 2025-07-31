@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: Sleep
   m_EditorClassIdentifier: 
   skillName: Sleep
-  description: Player Sleeps and that's all why the **** did you sleep?
-  cooldown: 2
+  description: Player Sleeps and that's all... Why the **** did you sleep?
+  cooldown: 10
   power: 0
+  multiplier: 1
+  price: 0
   icon: {fileID: -430992898358896206, guid: 87ad6e7d524def74a8b9c0525e2d96e8, type: 3}
   rarity: 1
+  type: 2
+  isPassive: 1

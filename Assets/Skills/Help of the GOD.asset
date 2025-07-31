@@ -16,5 +16,8 @@ MonoBehaviour:
   description: God will help player to attack enemy with x10 power!
   cooldown: 50
   power: 10
+  multiplier: 10
   icon: {fileID: -3099154585137993449, guid: 87ad6e7d524def74a8b9c0525e2d96e8, type: 3}
   rarity: 4
+  type: 0
+  isPassive: 0
