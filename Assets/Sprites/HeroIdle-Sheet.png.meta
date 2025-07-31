@@ -1,0 +1,907 @@
+fileFormatVersion: 2
+guid: 7b5662ec300c612479f45570aadf751b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1807468758588214948
+    second: HeroIdle-Sheet_0
+  - first:
+      213: -5636805903851064224
+    second: HeroIdle-Sheet_1
+  - first:
+      213: 346304155453734737
+    second: HeroIdle-Sheet_2
+  - first:
+      213: -462364649685249861
+    second: HeroIdle-Sheet_3
+  - first:
+      213: -8216647635674845090
+    second: HeroIdle-Sheet_4
+  - first:
+      213: -5332755284735770466
+    second: HeroIdle-Sheet_5
+  - first:
+      213: 1252992027383106280
+    second: HeroIdle-Sheet_6
+  - first:
+      213: 5987052435140447482
+    second: HeroIdle-Sheet_7
+  - first:
+      213: -6263023714787850266
+    second: HeroIdle-Sheet_8
+  - first:
+      213: -1048868764357102103
+    second: HeroIdle-Sheet_9
+  - first:
+      213: 795077332283621430
+    second: HeroIdle-Sheet_10
+  - first:
+      213: -5858815826823874084
+    second: HeroIdle-Sheet_11
+  - first:
+      213: 6350571516996984529
+    second: HeroIdle-Sheet_12
+  - first:
+      213: -2601742028018607846
+    second: HeroIdle-Sheet_13
+  - first:
+      213: 827140699882552501
+    second: HeroIdle-Sheet_14
+  - first:
+      213: -6916741610580420737
+    second: HeroIdle-Sheet_15
+  - first:
+      213: -2842397528112537734
+    second: HeroIdle-Sheet_16
+  - first:
+      213: 7009309481417770671
+    second: HeroIdle-Sheet_17
+  - first:
+      213: 8513179686550075125
+    second: HeroIdle-Sheet_18
+  - first:
+      213: -504931301218051617
+    second: HeroIdle-Sheet_19
+  - first:
+      213: -7873616600552880204
+    second: HeroIdle-Sheet_20
+  - first:
+      213: -3509074578931611534
+    second: HeroIdle-Sheet_21
+  - first:
+      213: 2512136412842435716
+    second: HeroIdle-Sheet_22
+  - first:
+      213: 1326271481096024113
+    second: HeroIdle-Sheet_23
+  - first:
+      213: -2773615936000889592
+    second: HeroIdle-Sheet_24
+  - first:
+      213: 7913907146010929483
+    second: HeroIdle-Sheet_25
+  - first:
+      213: 2124542113756911829
+    second: HeroIdle-Sheet_26
+  - first:
+      213: -2400985111560611150
+    second: HeroIdle-Sheet_27
+  - first:
+      213: -4690382651455520880
+    second: HeroIdle-Sheet_28
+  - first:
+      213: -9180777925318810846
+    second: HeroIdle-Sheet_29
+  - first:
+      213: -6257611596109117202
+    second: HeroIdle-Sheet_30
+  - first:
+      213: -4008918680607671577
+    second: HeroIdle-Sheet_31
+  - first:
+      213: 4514806380916124293
+    second: HeroIdle-Sheet_32
+  - first:
+      213: 6431107494936129038
+    second: HeroIdle-Sheet_33
+  - first:
+      213: -7248498502125274521
+    second: HeroIdle-Sheet_34
+  - first:
+      213: 1528155046157824340
+    second: HeroIdle-Sheet_35
+  - first:
+      213: 8334893654763360131
+    second: HeroIdle-Sheet_36
+  - first:
+      213: 8495510497454735335
+    second: HeroIdle-Sheet_37
+  - first:
+      213: -6562880391050341083
+    second: HeroIdle-Sheet_38
+  - first:
+      213: 5939911871231487336
+    second: HeroIdle-Sheet_39
+  - first:
+      213: -1212854314603106134
+    second: HeroIdle-Sheet_40
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 464
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c51bbbd8db49ae6e0800000000000000
+      internalID: -1807468758588214948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 464
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 064f12145ea06c1b0800000000000000
+      internalID: -5636805903851064224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 464
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15fbf0a6bc15ec400800000000000000
+      internalID: 346304155453734737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 464
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb010d20dc95599f0800000000000000
+      internalID: -462364649685249861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 464
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e503c0f428a98fd80800000000000000
+      internalID: -8216647635674845090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 464
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e90cc3b925f3ef5b0800000000000000
+      internalID: -5332755284735770466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 348
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ea019a3c95836110800000000000000
+      internalID: 1252992027383106280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 348
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afc0f201878461350800000000000000
+      internalID: 5987052435140447482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 348
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e709344d154519a0800000000000000
+      internalID: -6263023714787850266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 348
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e5fd7c7a6ba171f0800000000000000
+      internalID: -1048868764357102103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 349
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6300bb70f9ea80b00800000000000000
+      internalID: 795077332283621430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 348
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd9f9bdfb0e41bea0800000000000000
+      internalID: -5858815826823874084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 232
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1de915fd523c12850800000000000000
+      internalID: 6350571516996984529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 232
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a191fbef861c4ebd0800000000000000
+      internalID: -2601742028018607846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 232
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bc74cb85189a7b00800000000000000
+      internalID: 827140699882552501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 233
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f77d032d62cc200a0800000000000000
+      internalID: -6916741610580420737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 232
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7f57620286cd88d0800000000000000
+      internalID: -2842397528112537734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 232
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa60fa026d1164160800000000000000
+      internalID: 7009309481417770671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 116
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f673e5f1d3e42670800000000000000
+      internalID: 8513179686550075125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 116
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd91ce228af1ef8f0800000000000000
+      internalID: -504931301218051617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 116
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b74d620b6b4bb290800000000000000
+      internalID: -7873616600552880204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 116
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2788d6823434d4fc0800000000000000
+      internalID: -3509074578931611534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 116
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4842cc2f1c6ecd220800000000000000
+      internalID: 2512136412842435716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 116
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 130b57a92ecd76210800000000000000
+      internalID: 1326271481096024113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80ded4f50032289d0800000000000000
+      internalID: -2773615936000889592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 0
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b49286f9e98d3dd60800000000000000
+      internalID: 7913907146010929483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 0
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d896d0dbc3eb7d10800000000000000
+      internalID: 2124542113756911829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 0
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ba9d6213ccfdaed0800000000000000
+      internalID: -2400985111560611150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HeroIdle-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 0
+        width: 141
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09fb65744d968eeb0800000000000000
+      internalID: -4690382651455520880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 7fa665277b4be954297ce5363c6598d0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      HeroIdle-Sheet_0: -1807468758588214948
+      HeroIdle-Sheet_1: -5636805903851064224
+      HeroIdle-Sheet_10: 795077332283621430
+      HeroIdle-Sheet_11: -5858815826823874084
+      HeroIdle-Sheet_12: 6350571516996984529
+      HeroIdle-Sheet_13: -2601742028018607846
+      HeroIdle-Sheet_14: 827140699882552501
+      HeroIdle-Sheet_15: -6916741610580420737
+      HeroIdle-Sheet_16: -2842397528112537734
+      HeroIdle-Sheet_17: 7009309481417770671
+      HeroIdle-Sheet_18: 8513179686550075125
+      HeroIdle-Sheet_19: -504931301218051617
+      HeroIdle-Sheet_2: 346304155453734737
+      HeroIdle-Sheet_20: -7873616600552880204
+      HeroIdle-Sheet_21: -3509074578931611534
+      HeroIdle-Sheet_22: 2512136412842435716
+      HeroIdle-Sheet_23: 1326271481096024113
+      HeroIdle-Sheet_24: -2773615936000889592
+      HeroIdle-Sheet_25: 7913907146010929483
+      HeroIdle-Sheet_26: 2124542113756911829
+      HeroIdle-Sheet_27: -2400985111560611150
+      HeroIdle-Sheet_28: -4690382651455520880
+      HeroIdle-Sheet_3: -462364649685249861
+      HeroIdle-Sheet_4: -8216647635674845090
+      HeroIdle-Sheet_5: -5332755284735770466
+      HeroIdle-Sheet_6: 1252992027383106280
+      HeroIdle-Sheet_7: 5987052435140447482
+      HeroIdle-Sheet_8: -6263023714787850266
+      HeroIdle-Sheet_9: -1048868764357102103
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
