@@ -15,14 +15,13 @@ public class SkillShopManager : MonoBehaviour
 
     void Start()
     {
-        // 🔹 На старті показуємо вже куплені скіли
+        // Показуємо вже куплені скіли
         foreach (SkillData skill in PlayerData.Instance.ownedSkills)
         {
             AddSkillToPanel(skill);
         }
     }
 
-    // Викликається кнопкою Bet
     public void GiveSkillByBet(int coins)
     {
         if (coins <= 0)
@@ -35,21 +34,25 @@ public class SkillShopManager : MonoBehaviour
         ConfirmBet();
     }
 
+
     private void ConfirmBet()
     {
         int targetRarity = GetRarityByBet(currentBet);
 
-        var raritySkills = allShopSkills.Where(s => s.rarity == targetRarity).ToList();
-        if (raritySkills.Count == 0)
+        // Підбираємо скіл з урахуванням fallback
+        SkillData chosen = GetSkillWithFallback(targetRarity);
+
+        if (chosen == null)
         {
-            Debug.LogWarning($"❌ Немає скілів з rarity {targetRarity}");
+            Debug.LogWarning("❌ В магазині більше немає доступних скілів!");
             return;
         }
 
-        SkillData chosen = raritySkills[Random.Range(0, raritySkills.Count)];
-
         // Додаємо в PlayerData
         PlayerData.Instance.AddSkill(chosen);
+
+        // Прибираємо скіл з магазину, щоб не дублювався
+        allShopSkills.Remove(chosen);
 
         // Додаємо на панель
         AddSkillToPanel(chosen);
@@ -59,10 +62,47 @@ public class SkillShopManager : MonoBehaviour
         currentBet = 0;
     }
 
+    // Підбирає rarity з fallback
+    private SkillData GetSkillWithFallback(int startingRarity)
+    {
+        int rarity = startingRarity;
+
+        // Основний пошук: від запитаного до 1
+        while (rarity >= 1)
+        {
+            var available = allShopSkills
+                .Where(s => s.rarity == rarity && !PlayerData.Instance.ownedSkills.Contains(s))
+                .ToList();
+
+            if (available.Count > 0)
+                return available[Random.Range(0, available.Count)];
+
+            rarity--;
+        }
+
+        // 💫 Рідкісний шанс на кращий скіл (2%)
+        if (Random.value <= 0.02f)
+        {
+            int maxRarity = allShopSkills.Max(s => s.rarity);
+            var betterSkills = allShopSkills
+                .Where(s => s.rarity > startingRarity && !PlayerData.Instance.ownedSkills.Contains(s))
+                .ToList();
+
+            if (betterSkills.Count > 0)
+            {
+                Debug.Log("🎉 Випала рідкісна удача! Отримано скіл вищої якості");
+                return betterSkills[Random.Range(0, betterSkills.Count)];
+            }
+        }
+
+        return null; // взагалі нічого не залишилось
+    }
+
     private int GetRarityByBet(int bet)
     {
-        if (bet >= 100) return 3;  
-        if (bet >= 50) return 2;   
+        if (bet >= 100) return 4;
+        if (bet >= 50) return 3;  
+        if (bet >= 30) return 2;   
         return 1;                  
     }
 
