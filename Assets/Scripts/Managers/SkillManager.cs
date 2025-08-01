@@ -15,63 +15,43 @@ public class SkillManager : MonoBehaviour
     public SupportSkill supportSkill;
     public PassiveSkill passiveSkill;
 
-    [Header("Skill Pools")]
-    public List<SkillData> availableSkills;
-    public List<SkillData> playerSkills = new List<SkillData>();
-
-    [Header("UI")]
-    public Button randomSkillButton;
-
+    [Header("Health Systems")]
     public HealthSystem playerHealthSystem;
     public HealthSystem enemyHealthSystem;
 
     public static SkillManager Instance { get; private set; }
+
     private bool isPlayerDead = false;
     private bool isEnemyDead = false;
-
+    private List<SkillData> playerSkills = new List<SkillData>();
 
     private void Awake()
     {
         if (Instance == null)
-        {
             Instance = this;
-        }
         else
-        {
             Destroy(gameObject);
-        }
     }
-
 
     void Start()
     {
-        // Прив’язуємо health-системи
+        // Підключаємо хп-бари
         UIManager.Instance.InitHealthBars(playerHealthSystem, enemyHealthSystem);
+
+        // Слухаємо смерть
         playerHealthSystem.OnDeath += OnPlayerDied;
-        // Додаємо стартові скіли
+        enemyHealthSystem.OnDeath += OnEnemyDied;
+
+        // Підтягуємо скіли з PlayerData (отримані в магазині)
+        if (PlayerData.Instance != null)
+            playerSkills = new List<SkillData>(PlayerData.Instance.ownedSkills);
+
+        // Створюємо UI-кнопки
         foreach (SkillData skill in playerSkills)
-        {
             AddSkillToUI(skill);
-        }
-
-        randomSkillButton.onClick.AddListener(PickRandomSkill);
     }
 
-
-    void PickRandomSkill()
-    {
-        if (availableSkills.Count == 0) return;
-
-        int index = Random.Range(0, availableSkills.Count);
-        SkillData selectedSkill = availableSkills[index];
-
-        playerSkills.Add(selectedSkill);
-        availableSkills.RemoveAt(index);
-
-        AddSkillToUI(selectedSkill);
-    }
-
-    void AddSkillToUI(SkillData skill)
+    private void AddSkillToUI(SkillData skill)
     {
         GameObject skillGO = Instantiate(skillUIPrefab, playerSkillPanel);
         skillGO.transform.localScale = Vector3.one;
@@ -81,62 +61,10 @@ public class SkillManager : MonoBehaviour
 
         SkillButtonController btnController = skillGO.GetComponent<SkillButtonController>();
         if (btnController != null)
-        {
-            btnController.Setup(skill); // Вся логіка кліку — всередині
-        }
+            btnController.Setup(skill);
 
-        // Запустити пасивку, якщо треба
         if (skill.isPassive)
-        {
             StartCoroutine(RunPassive(skill));
-        }
-    }
-
-
-    void OnSkillClicked(SkillData skill)
-    {
-        GameObject target = FindTarget(); // Реалізуй сам або тимчасово зроби null
-
-        switch (skill.type)
-        {
-            case SkillType.Attack:
-                attackSkill.Activate(skill, player, target);
-                break;
-
-            case SkillType.Support:
-                supportSkill.Activate(skill, player);
-                break;
-
-            case SkillType.Passive:
-                passiveSkill.Activate(skill, player);
-                break;
-        }
-    }
-
-    public void DisableAllSkills(float duration)
-    {
-        StartCoroutine(DisableAllSkillsCoroutine(duration));
-    }
-
-    private IEnumerator DisableAllSkillsCoroutine(float duration)
-    {
-        Button[] buttons = playerSkillPanel.GetComponentsInChildren<Button>();
-        foreach (var btn in buttons)
-            btn.interactable = false;
-
-        yield return new WaitForSeconds(duration);
-
-        if (!isPlayerDead && !isEnemyDead)
-        {
-            foreach (var btn in buttons)
-                btn.interactable = true;
-        }
-    }
-
-
-    GameObject FindTarget()
-    {
-        return GameObject.FindWithTag("Enemy");
     }
 
     public void ActivateSkill(SkillData skill)
@@ -157,14 +85,20 @@ public class SkillManager : MonoBehaviour
         }
     }
 
-    public void BlockSkillsDuringAnimation(float duration)
+    GameObject FindTarget()
     {
-        StartCoroutine(BlockCoroutine(duration));
+        return GameObject.FindWithTag("Enemy");
     }
 
-    private IEnumerator BlockCoroutine(float duration)
+    public void DisableAllSkills(float duration)
+    {
+        StartCoroutine(DisableAllSkillsCoroutine(duration));
+    }
+
+    private IEnumerator DisableAllSkillsCoroutine(float duration)
     {
         Button[] buttons = playerSkillPanel.GetComponentsInChildren<Button>();
+
         foreach (var btn in buttons)
             btn.interactable = false;
 
@@ -177,14 +111,33 @@ public class SkillManager : MonoBehaviour
         }
     }
 
+    public void BlockSkillsDuringAnimation(float duration)
+    {
+        StartCoroutine(BlockCoroutine(duration));
+    }
 
+    private IEnumerator BlockCoroutine(float duration)
+    {
+        Button[] buttons = playerSkillPanel.GetComponentsInChildren<Button>();
+
+        foreach (var btn in buttons)
+            btn.interactable = false;
+
+        yield return new WaitForSeconds(duration);
+
+        if (!isPlayerDead && !isEnemyDead)
+        {
+            foreach (var btn in buttons)
+                btn.interactable = true;
+        }
+    }
 
     private IEnumerator RunPassive(SkillData data)
     {
         while (true)
         {
             yield return new WaitForSeconds(data.cooldown);
-            passiveSkill.Activate(data, player);  // уже реалізований метод
+            passiveSkill.Activate(data, player);
         }
     }
 
@@ -206,5 +159,4 @@ public class SkillManager : MonoBehaviour
         foreach (var btn in buttons)
             btn.interactable = false;
     }
-
 }
