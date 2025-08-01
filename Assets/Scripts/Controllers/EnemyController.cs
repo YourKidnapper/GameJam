@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class EnemyController : MonoBehaviour
 {
@@ -18,15 +19,12 @@ public class EnemyController : MonoBehaviour
         healthSystem = GetComponent<HealthSystem>();
         cooldownTimer = attackCooldown;
 
-        if (player == null)
+        StartCoroutine(FindPlayerAndSubscribe());
+        healthSystem.OnDeath += () =>
         {
-            player = GameObject.FindWithTag("Player");
-        }
-            healthSystem.OnDeath += () =>
-            {
             isDead = true;
             Debug.Log("❌ Ворог мертвий. Зупиняє дії.");
-            };
+        };
 
         if (player != null && player.TryGetComponent(out HealthSystem playerHealth))
         {
@@ -97,7 +95,7 @@ public class EnemyController : MonoBehaviour
 
     private void TryFreezePlayerSkills(float duration)
     {
-        SkillManager skillManager = FindObjectOfType<SkillManager>();
+        SkillManager skillManager = FindFirstObjectByType<SkillManager>();
         if (skillManager != null)
         {
             skillManager.DisableAllSkills(duration);
@@ -124,5 +122,24 @@ public class EnemyController : MonoBehaviour
         // Інакше випадкова атака
         int index = Random.Range(0, attackSkills.Length);
         return attackSkills[index];
+    }
+    
+    private IEnumerator FindPlayerAndSubscribe()
+    {
+        player = GameObject.FindWithTag("Player");
+        while (player == null)
+        {
+            player = GameObject.FindWithTag("Player");
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        if (player.TryGetComponent(out HealthSystem playerHealth))
+        {
+            playerHealth.OnDeath += () =>
+            {
+                Debug.Log("🎯 Гравець помер. Ворог більше не атакує.");
+                player = null;
+            };
+        }
     }
 }
