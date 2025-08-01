@@ -26,6 +26,9 @@ public class SkillManager : MonoBehaviour
     public HealthSystem enemyHealthSystem;
 
     public static SkillManager Instance { get; private set; }
+    private bool isPlayerDead = false;
+    private bool isEnemyDead = false;
+
 
     private void Awake()
     {
@@ -44,7 +47,7 @@ public class SkillManager : MonoBehaviour
     {
         // Прив’язуємо health-системи
         UIManager.Instance.InitHealthBars(playerHealthSystem, enemyHealthSystem);
-
+        playerHealthSystem.OnDeath += OnPlayerDied;
         // Додаємо стартові скіли
         foreach (SkillData skill in playerSkills)
         {
@@ -117,17 +120,19 @@ public class SkillManager : MonoBehaviour
 
     private IEnumerator DisableAllSkillsCoroutine(float duration)
     {
-        // Знайди всі кнопки в playerSkillPanel
         Button[] buttons = playerSkillPanel.GetComponentsInChildren<Button>();
-
         foreach (var btn in buttons)
             btn.interactable = false;
 
         yield return new WaitForSeconds(duration);
 
-        foreach (var btn in buttons)
-            btn.interactable = true;
+        if (!isPlayerDead && !isEnemyDead)
+        {
+            foreach (var btn in buttons)
+                btn.interactable = true;
+        }
     }
+
 
     GameObject FindTarget()
     {
@@ -160,17 +165,20 @@ public class SkillManager : MonoBehaviour
     private IEnumerator BlockCoroutine(float duration)
     {
         Button[] buttons = playerSkillPanel.GetComponentsInChildren<Button>();
-
         foreach (var btn in buttons)
             btn.interactable = false;
 
         yield return new WaitForSeconds(duration);
 
-        foreach (var btn in buttons)
-            btn.interactable = true;
+        if (!isPlayerDead && !isEnemyDead)
+        {
+            foreach (var btn in buttons)
+                btn.interactable = true;
+        }
     }
 
-    
+
+
     private IEnumerator RunPassive(SkillData data)
     {
         while (true)
@@ -179,4 +187,24 @@ public class SkillManager : MonoBehaviour
             passiveSkill.Activate(data, player);  // уже реалізований метод
         }
     }
+
+    public void OnPlayerDied()
+    {
+        isPlayerDead = true;
+        DisableAllSkillButtonsPermanently();
+    }
+
+    public void OnEnemyDied()
+    {
+        isEnemyDead = true;
+        DisableAllSkillButtonsPermanently();
+    }
+
+    private void DisableAllSkillButtonsPermanently()
+    {
+        Button[] buttons = playerSkillPanel.GetComponentsInChildren<Button>();
+        foreach (var btn in buttons)
+            btn.interactable = false;
+    }
+
 }
