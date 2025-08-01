@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private float typingSpeed = 0.03f;
 
     public bool isInGambleMode { get; private set; } = false;
+    private bool dialogueWasFinished = false;
 
     [Header("Dialogue Lines")]
     [TextArea(3, 5)]
@@ -72,13 +73,13 @@ public class DialogueManager : MonoBehaviour
     {
         if (index < sentences.Length - 1)
         {
-            index++;
-            StartCoroutine(TypeSentence(sentences[index]));
+        index++;
+        StartCoroutine(TypeSentence(sentences[index]));
         }
-        else
+        else if (!dialogueWasFinished)
         {
-            // Коли всі репліки показані
-            onDialogueFinished?.Invoke();
+        dialogueWasFinished = true;
+        onDialogueFinished?.Invoke();
         }
     }
 

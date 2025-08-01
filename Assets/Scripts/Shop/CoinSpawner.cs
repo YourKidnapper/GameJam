@@ -6,11 +6,14 @@ public class CoinSpawner : MonoBehaviour
     [SerializeField] private GameObject coinPrefab;
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private TextMeshProUGUI counterText;
-    [SerializeField] private Collider2D spawnArea; // твій об'єкт SpawnArea
+    [SerializeField] private Collider2D spawnArea;
+
+    private bool isSpawningBlocked = false;
 
     [Header("Ставки")]
     [SerializeField] private int[] thresholds = { 5, 10, 20 };
-    [SerializeField] private string[] comments = {
+    [SerializeField]
+    private string[] comments = {
         "Хмм, мало монет...",
         "О, вже щось цікавіше!",
         "Оце щедро!"
@@ -47,6 +50,8 @@ public class CoinSpawner : MonoBehaviour
 
     void TrySpawnCoin()
     {
+        if (isSpawningBlocked) return;
+
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         worldPos.z = 0;
 
@@ -79,5 +84,23 @@ public class CoinSpawner : MonoBehaviour
             currentCommentIndex++;
         }
     }
-}
 
+    // ✅ Метод для кнопки
+    public int GetCoinCount()
+    {
+        return coinCount;
+    }
+
+    // ✅ Скидання монет після ставки
+    public void ResetCoins()
+    {
+        coinCount = 0;
+        currentCommentIndex = 0;
+        counterText.text = "Монет: 0";
+    }
+
+    public void BlockSpawning()
+    {
+    isSpawningBlocked = true;
+    }
+}
