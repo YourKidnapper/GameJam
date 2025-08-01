@@ -14,6 +14,10 @@ public class SupportSkill : MonoBehaviour
                 TriggerPowerUp(data, user);
                 break;
 
+            case "Help of the GOD":
+                TriggerHelpOfTheGods(data, user);
+                break;
+
             default:
                 Debug.LogWarning($"Support skill '{data.skillName}' не має реалізації!");
                 break;
@@ -36,7 +40,17 @@ public class SupportSkill : MonoBehaviour
         float boost = data.multiplier;
         Debug.Log($"{data.skillName} підсилює наступну атаку на множник {boost}!");
 
-        // Можна додати логіку: зберегти стан "підсилення" в компоненті гравця
+        if (user.TryGetComponent(out PlayerStats stats))
+        {
+            stats.ApplyAttackBoost(boost);
+        }
+    }
+    
+    private void TriggerHelpOfTheGods(SkillData data, GameObject user)
+    {
+        float boost = data.multiplier;
+        Debug.Log($"{data.skillName} активує допомогу богів!");
+
         if (user.TryGetComponent(out PlayerStats stats))
         {
             stats.ApplyAttackBoost(boost);

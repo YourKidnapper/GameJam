@@ -6,8 +6,9 @@ public class HealthSystem : MonoBehaviour, IDamageable, IHealable
     public int maxHealth = 100;
     public int currentHealth;
 
-    // Подія, що повідомляє про зміну HP
     public event Action<int, int> OnHealthChanged;
+
+    public event Action OnDeath;
 
     private void Awake()
     {
@@ -35,6 +36,19 @@ public class HealthSystem : MonoBehaviour, IDamageable, IHealable
     private void Die()
     {
         Debug.Log($"{gameObject.name} помер!");
-        // Тут можна викликати анімацію смерті або респаун
+
+        OnDeath?.Invoke();
+
+        if (CompareTag("Player"))
+        {
+            SkillManager.Instance?.OnPlayerDied();
+        }
+        else if (CompareTag("Enemy"))
+        {
+            SkillManager.Instance?.OnEnemyDied();
+        }
+
+        // Тут можеш додати анімацію, звук, ефекти...
     }
+
 }
