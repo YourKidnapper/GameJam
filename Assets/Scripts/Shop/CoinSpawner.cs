@@ -6,6 +6,7 @@ public class CoinSpawner : MonoBehaviour
     [SerializeField] private GameObject coinPrefab;
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private TextMeshProUGUI counterText;
+    [SerializeField] private Collider2D spawnArea; // твій об'єкт SpawnArea
 
     [Header("Ставки")]
     [SerializeField] private int[] thresholds = { 5, 10, 20 };
@@ -16,7 +17,7 @@ public class CoinSpawner : MonoBehaviour
     };
 
     [Header("Параметри потоку")]
-    [SerializeField] private float spawnDelay = 0.1f; // затримка між монетами
+    [SerializeField] private float spawnDelay = 0.1f;
     private float spawnTimer;
 
     private int coinCount = 0;
@@ -27,31 +28,37 @@ public class CoinSpawner : MonoBehaviour
         if (!dialogueManager.isInGambleMode)
             return;
 
-        // Одиночний клік
         if (Input.GetMouseButtonDown(0))
         {
-            SpawnCoin();
-            spawnTimer = 0f; // щоб одразу не додавало зайву монету
+            TrySpawnCoin();
+            spawnTimer = 0f;
         }
 
-        // Утримання кнопки
         if (Input.GetMouseButton(0))
         {
             spawnTimer += Time.deltaTime;
             if (spawnTimer >= spawnDelay)
             {
-                SpawnCoin();
+                TrySpawnCoin();
                 spawnTimer = 0f;
             }
         }
     }
 
-    void SpawnCoin()
+    void TrySpawnCoin()
     {
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         worldPos.z = 0;
 
-        GameObject coin = Instantiate(coinPrefab, worldPos, Quaternion.identity);
+        if (spawnArea.OverlapPoint(worldPos))
+        {
+            SpawnCoin(worldPos);
+        }
+    }
+
+    void SpawnCoin(Vector3 pos)
+    {
+        GameObject coin = Instantiate(coinPrefab, pos, Quaternion.identity);
 
         var sr = coin.GetComponent<SpriteRenderer>();
         if (sr != null)
