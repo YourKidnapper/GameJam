@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private Animator CatAnimator; // додай сюди аніматор кота
 
     [Header("Dialogue Settings")]
     [SerializeField] private float typingSpeed = 0.03f;
@@ -26,7 +27,6 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Events")]
     public UnityEvent onDialogueFinished;
-    // Прив’яжеш у інспекторі показ кнопок
 
     private int index;
     private bool isTyping;
@@ -47,6 +47,7 @@ public class DialogueManager : MonoBehaviour
                 StopAllCoroutines();
                 dialogueText.text = sentences[index];
                 isTyping = false;
+                CatAnimator.SetBool("IsTalking", false); // вимкнути говоріння
             }
             else
             {
@@ -60,11 +61,17 @@ public class DialogueManager : MonoBehaviour
         isTyping = true;
         dialogueText.text = "";
 
+        // запуск анімації говоріння
+        CatAnimator.SetBool("IsTalking", true);
+
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
+
+        // завершення анімації
+        CatAnimator.SetBool("IsTalking", false);
 
         isTyping = false;
     }
@@ -73,25 +80,24 @@ public class DialogueManager : MonoBehaviour
     {
         if (index < sentences.Length - 1)
         {
-        index++;
-        StartCoroutine(TypeSentence(sentences[index]));
+            index++;
+            StartCoroutine(TypeSentence(sentences[index]));
         }
         else if (!dialogueWasFinished)
         {
-        dialogueWasFinished = true;
-        onDialogueFinished?.Invoke();
+            dialogueWasFinished = true;
+            onDialogueFinished?.Invoke();
         }
     }
 
-    // Викликати вручну, якщо потрібно, щоб кіт сказав щось нове
     public void ShowMessage(string message, bool gambleMode = false)
     {
         StopAllCoroutines();
         StartCoroutine(TypeSentence(message));
         isInGambleMode = gambleMode;
     }
-    
-     public void ExitGambleMode()
+
+    public void ExitGambleMode()
     {
         isInGambleMode = false;
     }
