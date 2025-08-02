@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SupportSkill : MonoBehaviour
 {
+    [SerializeField] private Animator Player_controller;
     public void Activate(SkillData data, GameObject user)
     {
         switch (data.skillName)
@@ -24,7 +25,7 @@ public class SupportSkill : MonoBehaviour
         }
     }
 
-    private void TriggerHeal(SkillData data, GameObject user)
+        private void TriggerHeal(SkillData data, GameObject user)
     {
         int heal = Mathf.RoundToInt(data.power * data.multiplier);
         Debug.Log($"{data.skillName} відновлює {heal} HP!");
@@ -32,6 +33,17 @@ public class SupportSkill : MonoBehaviour
         if (user.TryGetComponent(out IHealable healer))
         {
             healer.Heal(heal);
+
+            // шукаємо Animator прямо на гравцеві
+            Animator anim = user.GetComponent<Animator>();
+            if (anim != null && anim.runtimeAnimatorController != null)
+            {
+                anim.SetTrigger("Heal");
+            }
+            else
+            {
+                Debug.LogError("❌ У гравця немає Animator або він без контролера!");
+            }
         }
     }
 
