@@ -8,7 +8,7 @@ public class SkillManager : MonoBehaviour
     [Header("References")]
     public Transform playerSkillPanel;
     public GameObject skillUIPrefab;
-    public GameObject player;
+    [SerializeField] private GameObject player;
 
     [Header("Skill Logic")]
     public AttackSkill attackSkill;
@@ -16,7 +16,7 @@ public class SkillManager : MonoBehaviour
     public PassiveSkill passiveSkill;
 
     [Header("Health Systems")]
-    public HealthSystem playerHealthSystem;
+    [SerializeField] private HealthSystem playerHealthSystem;
     public HealthSystem enemyHealthSystem;
 
     public static SkillManager Instance { get; private set; }
@@ -24,6 +24,8 @@ public class SkillManager : MonoBehaviour
     private bool isPlayerDead = false;
     private bool isEnemyDead = false;
     private List<SkillData> playerSkills = new List<SkillData>();
+
+    public Transform playerSpawnPoint; // Прив’язати в інспекторі
 
     private void Awake()
     {
@@ -35,21 +37,55 @@ public class SkillManager : MonoBehaviour
 
     void Start()
     {
-        // Підключаємо хп-бари
+        GameObject playerPrefab = Resources.Load<GameObject>("Player");
+        player = Instantiate(playerPrefab);
+
+        // Ставимо гравця на SpawnPoint
+        if (playerSpawnPoint != null)
+        {
+            player.transform.position = playerSpawnPoint.position;
+            player.transform.rotation = playerSpawnPoint.rotation;
+        }
+
+        playerHealthSystem = player.GetComponent<HealthSystem>();
+        if (playerHealthSystem == null)
+        {
+            Debug.LogError("❌ У гравця відсутній компонент HealthSystem!");
+        }
+
+        // Скидаємо HP гравця та ворога
+        playerHealthSystem.currentHealth = playerHealthSystem.maxHealth;
+        enemyHealthSystem.currentHealth = enemyHealthSystem.maxHealth;
         UIManager.Instance.InitHealthBars(playerHealthSystem, enemyHealthSystem);
 
-        // Слухаємо смерть
         playerHealthSystem.OnDeath += OnPlayerDied;
         enemyHealthSystem.OnDeath += OnEnemyDied;
 
-        // Підтягуємо скіли з PlayerData (отримані в магазині)
+        // Чистимо старі кнопки
+        foreach (Transform child in playerSkillPanel)
+            Destroy(child.gameObject);
+
+        // Завантажуємо скіли з PlayerData
         if (PlayerData.Instance != null)
             playerSkills = new List<SkillData>(PlayerData.Instance.ownedSkills);
 
-        // Створюємо UI-кнопки
+        // Створюємо кнопки
         foreach (SkillData skill in playerSkills)
             AddSkillToUI(skill);
     }
+
+    IEnumerator PositionPlayerAtSpawn()
+    {
+        yield return new WaitForEndOfFrame(); // чекаємо доки сцена завантажиться
+
+        if (playerSpawnPoint != null && player != null)
+        {
+            player.transform.position = playerSpawnPoint.position;
+            player.transform.rotation = playerSpawnPoint.rotation;
+        }
+    }
+
+
 
     private void AddSkillToUI(SkillData skill)
     {

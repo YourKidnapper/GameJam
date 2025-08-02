@@ -63,6 +63,19 @@ public class CoinSpawner : MonoBehaviour
 
     void SpawnCoin(Vector3 pos)
     {
+        if (PlayerData.Instance.coins <= 0)
+        {
+            dialogueManager.ShowMessage("❌ У тебе закінчились монети!", true);
+            isSpawningBlocked = true;
+            return;
+        }
+
+        if (!PlayerData.Instance.SpendCoins(1))
+        {
+            isSpawningBlocked = true;
+            return;
+        }
+
         GameObject coin = Instantiate(coinPrefab, pos, Quaternion.identity);
 
         var sr = coin.GetComponent<SpriteRenderer>();
@@ -72,8 +85,17 @@ public class CoinSpawner : MonoBehaviour
         coinCount++;
         counterText.text = "Монет: " + coinCount;
 
+        UIManager.Instance?.UpdateCoinsUI(PlayerData.Instance.coins); // 🔄 оновлюємо монети гравця
+
         CheckThresholds();
+
+        if (PlayerData.Instance.coins == 0)
+        {
+            isSpawningBlocked = true;
+            dialogueManager.ShowMessage("❌ Більше не можна ставити монети!", true);
+        }
     }
+
 
     void CheckThresholds()
     {
