@@ -1,0 +1,767 @@
+fileFormatVersion: 2
+guid: f097f5c2ebab32d4b8a38a2cd09e83e9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2818527259614046344
+    second: GambleKing-Sheet_0
+  - first:
+      213: 2390011195011685752
+    second: GambleKing-Sheet_1
+  - first:
+      213: -2394712844648628580
+    second: GambleKing-Sheet_2
+  - first:
+      213: 6389110767042362931
+    second: GambleKing-Sheet_3
+  - first:
+      213: 537220969141977078
+    second: GambleKing-Sheet_4
+  - first:
+      213: 1329201598033851705
+    second: GambleKing-Sheet_5
+  - first:
+      213: -2329081726592434512
+    second: GambleKing-Sheet_6
+  - first:
+      213: -7647564365167148320
+    second: GambleKing-Sheet_7
+  - first:
+      213: -87429879784011488
+    second: GambleKing-Sheet_8
+  - first:
+      213: 6469022206096138678
+    second: GambleKing-Sheet_9
+  - first:
+      213: -1851051228651480477
+    second: GambleKing-Sheet_10
+  - first:
+      213: 7053357604507428575
+    second: GambleKing-Sheet_11
+  - first:
+      213: -5882272546585873417
+    second: GambleKing-Sheet_12
+  - first:
+      213: -4447909391821723052
+    second: GambleKing-Sheet_13
+  - first:
+      213: 2227349722131322552
+    second: GambleKing-Sheet_14
+  - first:
+      213: 3997580574896136051
+    second: GambleKing-Sheet_15
+  - first:
+      213: -6636372458694727087
+    second: GambleKing-Sheet_16
+  - first:
+      213: -4228530195321411734
+    second: GambleKing-Sheet_17
+  - first:
+      213: 3085312934454212046
+    second: GambleKing-Sheet_18
+  - first:
+      213: 8252807807842387539
+    second: GambleKing-Sheet_19
+  - first:
+      213: -8897954731765733969
+    second: GambleKing-Sheet_20
+  - first:
+      213: -4686637253025755473
+    second: GambleKing-Sheet_21
+  - first:
+      213: -9133414880995031998
+    second: GambleKing-Sheet_22
+  - first:
+      213: 2542771650398792310
+    second: GambleKing-Sheet_23
+  - first:
+      213: -6013416227080910479
+    second: GambleKing-Sheet_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GambleKing-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 700
+        width: 105
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87713fcf36492e8d0800000000000000
+      internalID: -2818527259614046344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 698
+        width: 105
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87dd0efd4860b2120800000000000000
+      internalID: 2390011195011685752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 696
+        width: 105
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9e37a30b5544ced0800000000000000
+      internalID: -2394712844648628580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 694
+        width: 105
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33efe24446eaaa850800000000000000
+      internalID: 6389110767042362931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 698
+        width: 105
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ff399700a7947700800000000000000
+      internalID: 537220969141977078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 702
+        width: 105
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93570bd9fc5427210800000000000000
+      internalID: 1329201598033851705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 531
+        width: 105
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0beba9972807dafd0800000000000000
+      internalID: -2329081726592434512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 529
+        width: 105
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e2c6497ab46ed590800000000000000
+      internalID: -7647564365167148320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 531
+        width: 105
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02908b0dcf269cef0800000000000000
+      internalID: -87429879784011488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 531
+        width: 105
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b1697e0c6596c950800000000000000
+      internalID: 6469022206096138678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 528
+        width: 105
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36a9d2ff6bebf46e0800000000000000
+      internalID: -1851051228651480477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 532
+        width: 105
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd6277afe5f82e160800000000000000
+      internalID: 7053357604507428575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 367
+        width: 105
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f377b4d848fd5ea0800000000000000
+      internalID: -5882272546585873417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 366
+        width: 105
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45aa75369f9d542c0800000000000000
+      internalID: -4447909391821723052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 365
+        width: 106
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b6d33275c229ee10800000000000000
+      internalID: 2227349722131322552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 364
+        width: 106
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37f9faf4a524a7730800000000000000
+      internalID: 3997580574896136051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 364
+        width: 106
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15aa05ae86ed6e3a0800000000000000
+      internalID: -6636372458694727087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 198
+        width: 105
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a67aad9e03e3155c0800000000000000
+      internalID: -4228530195321411734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 199
+        width: 106
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec5bf0764cb31da20800000000000000
+      internalID: 3085312934454212046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 199
+        width: 106
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 356040ad9fcd78270800000000000000
+      internalID: 8252807807842387539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 199
+        width: 105
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa5e899905d148480800000000000000
+      internalID: -8897954731765733969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 199
+        width: 105
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fae894ecf38b5feb0800000000000000
+      internalID: -4686637253025755473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 199
+        width: 110
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24446008e879f3180800000000000000
+      internalID: -9133414880995031998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 32
+        width: 110
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67a24f6085db94320800000000000000
+      internalID: 2542771650398792310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GambleKing-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 32
+        width: 98
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 179c54a4dcd0c8ca0800000000000000
+      internalID: -6013416227080910479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GambleKing-Sheet_0: -2818527259614046344
+      GambleKing-Sheet_1: 2390011195011685752
+      GambleKing-Sheet_10: -1851051228651480477
+      GambleKing-Sheet_11: 7053357604507428575
+      GambleKing-Sheet_12: -5882272546585873417
+      GambleKing-Sheet_13: -4447909391821723052
+      GambleKing-Sheet_14: 2227349722131322552
+      GambleKing-Sheet_15: 3997580574896136051
+      GambleKing-Sheet_16: -6636372458694727087
+      GambleKing-Sheet_17: -4228530195321411734
+      GambleKing-Sheet_18: 3085312934454212046
+      GambleKing-Sheet_19: 8252807807842387539
+      GambleKing-Sheet_2: -2394712844648628580
+      GambleKing-Sheet_20: -8897954731765733969
+      GambleKing-Sheet_21: -4686637253025755473
+      GambleKing-Sheet_22: -9133414880995031998
+      GambleKing-Sheet_23: 2542771650398792310
+      GambleKing-Sheet_24: -6013416227080910479
+      GambleKing-Sheet_3: 6389110767042362931
+      GambleKing-Sheet_4: 537220969141977078
+      GambleKing-Sheet_5: 1329201598033851705
+      GambleKing-Sheet_6: -2329081726592434512
+      GambleKing-Sheet_7: -7647564365167148320
+      GambleKing-Sheet_8: -87429879784011488
+      GambleKing-Sheet_9: 6469022206096138678
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
