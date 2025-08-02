@@ -11,6 +11,9 @@ public class SkillShopManager : MonoBehaviour
     public Transform playerSkillPanel; // панель внизу
     public GameObject skillUIPrefab;   // префаб однієї кнопки/іконки скіла
 
+    [SerializeField] private AudioClip[] catVoiceClips;
+    [SerializeField] private AudioSource catVoiceSource;
+
     private int currentBet = 0;
 
     void Start()
@@ -36,48 +39,54 @@ public class SkillShopManager : MonoBehaviour
 
 
     private void ConfirmBet()
-{
-    // 🔍 Перевіряємо чи взагалі є доступні скіли
-    var remainingSkills = allShopSkills
-        .Where(s => !PlayerData.Instance.ownedSkills.Contains(s))
-        .ToList();
-
-    if (remainingSkills.Count == 0)
     {
-        // Взагалі нічого не залишилось
-        Debug.Log("❌ Всі скіли вже видані");
-        FindObjectOfType<DialogueManager>()
-            .ShowMessage("I already helped you enough. You should be able to handle it by yourself.");
-        return;
+        // 🔍 Перевіряємо чи взагалі є доступні скіли
+        var remainingSkills = allShopSkills
+            .Where(s => !PlayerData.Instance.ownedSkills.Contains(s))
+            .ToList();
+
+        if (remainingSkills.Count == 0)
+        {
+                // Взагалі нічого не залишилось
+                FindFirstObjectByType<DialogueManager>()
+                    .ShowMessage("I already helped you enough. You should be able to handle it by yourself.");
+                SoundFXManager.instance?.PlaySoundEffect(catVoiceClips[0], transform, 0.8f);
+            return;
+        }
+
+        int targetRarity = GetRarityByBet(currentBet);
+
+        // Фільтруємо за поточною ставкою
+        var availableForBet = remainingSkills
+            .Where(s => s.rarity == targetRarity)
+            .ToList();
+
+        if (availableForBet.Count == 0)
+        {
+            // Немає підходящих під цю ставку
+            Debug.Log("❌ За цю ставку скілів більше нема");
+            FindFirstObjectByType<DialogueManager>()
+                .ShowMessage("I need more money to help you. Go and get!");
+            SoundFXManager.instance?.PlaySoundEffect(catVoiceClips[0], transform, 0.8f);
+            return;
+        }
+
+        if (currentBet >= 20)
+        {
+            SoundFXManager.instance?.PlaySoundEffect(catVoiceClips[1], transform, 0.8f);
+        }
+
+        // Основний вибір скіла
+            SkillData chosen = availableForBet[Random.Range(0, availableForBet.Count)];
+
+        PlayerData.Instance.AddSkill(chosen);
+        allShopSkills.Remove(chosen);
+        AddSkillToPanel(chosen);
+
+        Debug.Log($"✅ Додано скіл: {chosen.skillName}");
+
+        currentBet = 0;
     }
-
-    int targetRarity = GetRarityByBet(currentBet);
-
-    // Фільтруємо за поточною ставкою
-    var availableForBet = remainingSkills
-        .Where(s => s.rarity == targetRarity)
-        .ToList();
-
-    if (availableForBet.Count == 0)
-    {
-        // Немає підходящих під цю ставку
-        Debug.Log("❌ За цю ставку скілів більше нема");
-        FindObjectOfType<DialogueManager>()
-            .ShowMessage("I need more money to help you. Go and get!");
-        return;
-    }
-
-    // Основний вибір скіла
-    SkillData chosen = availableForBet[Random.Range(0, availableForBet.Count)];
-
-    PlayerData.Instance.AddSkill(chosen);
-    allShopSkills.Remove(chosen);
-    AddSkillToPanel(chosen);
-
-    Debug.Log($"✅ Додано скіл: {chosen.skillName}");
-
-    currentBet = 0;
-}
 
     private int GetRarityByBet(int bet)
     {

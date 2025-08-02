@@ -8,7 +8,9 @@ public class DialogueManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
-    [SerializeField] private Animator CatAnimator; // додай сюди аніматор кота
+    [SerializeField] private Animator CatAnimator;
+    [Header("Audio Clips")]
+    [SerializeField] private AudioClip catVoiceClip;
 
     [Header("Dialogue Settings")]
     [SerializeField] private float typingSpeed = 0.03f;
@@ -58,6 +60,7 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator TypeSentence(string sentence)
     {
+        SoundFXManager.instance?.PlaySoundEffect(catVoiceClip, transform, 0.5f);
         isTyping = true;
         dialogueText.text = "";
 

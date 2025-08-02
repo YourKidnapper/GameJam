@@ -14,9 +14,9 @@ public class CoinSpawner : MonoBehaviour
     [SerializeField] private int[] thresholds = { 5, 10, 20 };
     [SerializeField]
     private string[] comments = {
-        "Хмм, мало монет...",
-        "О, вже щось цікавіше!",
-        "Оце щедро!"
+        "Hmm, not much coin...",
+        "Oh, something more interesting!",
+        "That's generous!"
     };
 
     [Header("Параметри потоку")]
@@ -65,7 +65,7 @@ public class CoinSpawner : MonoBehaviour
     {
         if (PlayerData.Instance.coins <= 0)
         {
-            dialogueManager.ShowMessage("❌ У тебе закінчились монети!", true);
+            dialogueManager.ShowMessage("You're out of coins! Get a job!", true);
             isSpawningBlocked = true;
             return;
         }
@@ -83,16 +83,16 @@ public class CoinSpawner : MonoBehaviour
             sr.sortingLayerName = "Foreground";
 
         coinCount++;
-        counterText.text = "Монет: " + coinCount;
+        counterText.text = "Coins: " + coinCount;
 
-        UIManager.Instance?.UpdateCoinsUI(PlayerData.Instance.coins); // 🔄 оновлюємо монети гравця
+        UIManager.Instance?.UpdateCoinsUI(PlayerData.Instance.coins);
 
         CheckThresholds();
 
         if (PlayerData.Instance.coins == 0)
         {
             isSpawningBlocked = true;
-            dialogueManager.ShowMessage("❌ Більше не можна ставити монети!", true);
+            dialogueManager.ShowMessage("You can't place imaginary coins here!", true);
         }
     }
 
@@ -107,18 +107,16 @@ public class CoinSpawner : MonoBehaviour
         }
     }
 
-    // ✅ Метод для кнопки
     public int GetCoinCount()
     {
         return coinCount;
     }
 
-    // ✅ Скидання монет після ставки
     public void ResetCoins()
     {
         coinCount = 0;
         currentCommentIndex = 0;
-        counterText.text = "Монет: 0";
+        counterText.text = "Coins: 0";
     }
 
     public void BlockSpawning()
