@@ -2087,6 +2087,10 @@ MonoBehaviour:
   shopManager: {fileID: 222612607}
   betButton: {fileID: 890470031}
   toBattleButton: {fileID: 1283276031}
+  bowl: {fileID: 1720266140}
+  buttonsPanel: {fileID: 56184163}
+  betCounter: {fileID: 1315372848}
+  spawnArea: {fileID: 538423975}
   CatAnimator: {fileID: 1596563357}
 --- !u!1 &954362495
 GameObject:
