@@ -49,7 +49,13 @@ public class HealthSystem : MonoBehaviour, IDamageable, IHealable
         if (CompareTag("Player"))
         {
             SkillManager.Instance?.OnPlayerDied();
-            UnityEngine.SceneManagement.SceneManager.LoadScene("ShopScene");
+
+            var deathScreen = FindFirstObjectByType<DeathScreenManager>();
+            if (deathScreen != null)
+            {
+                deathScreen.PlayDeathScreen();
+                return; // Не продовжуємо далі
+            }
         }
         else if (CompareTag("Enemy"))
         {
