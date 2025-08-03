@@ -24,6 +24,7 @@ public class AttackSkill : MonoBehaviour
         }
 
         PlayAttackAnimation(user, data.skillName);
+        PlaySkillSound(user, data.sfx);
     }
 
     private int CalculateDamage(SkillData data, GameObject user)
@@ -55,9 +56,20 @@ public class AttackSkill : MonoBehaviour
                 Debug.LogWarning($"⚠️ У Animator відсутній тригер '{skillName}'.");
             }
         }
+    }
+
+    private void PlaySkillSound(GameObject user, AudioClip clip)
+    {
+        if (clip == null) return;
+
+        AudioSource audio = user.GetComponent<AudioSource>();
+        if (audio != null)
+        {
+            audio.PlayOneShot(clip);
+        }
         else
         {
-            Debug.LogError("❌ У користувача немає Animator або він без контролера!");
+            Debug.LogWarning("⚠️ У гравця немає AudioSource для відтворення звуку!");
         }
     }
 

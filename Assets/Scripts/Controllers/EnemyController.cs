@@ -6,44 +6,55 @@ public class EnemyController : MonoBehaviour
     public float attackCooldown = 2f;
     private float cooldownTimer;
 
-    public SkillData[] attackSkills; // Сюди підкидаємо активні скіли ворога
-    public GameObject player;        // Встановлюється вручну або шукається
+    public SkillData[] attackSkills;
+    public GameObject player;
 
     private HealthSystem healthSystem;
     private bool isInBerserkMode = false;
     private float nextAttackMultiplier = 1f;
     private bool isDead = false;
 
+    private Animator animator;
+    private AudioSource audioSource;
+
     private void Start()
     {
         healthSystem = GetComponent<HealthSystem>();
-        cooldownTimer = attackCooldown;
+        animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+        }
 
+        cooldownTimer = attackCooldown;
         StartCoroutine(FindPlayerAndSubscribe());
+
         healthSystem.OnDeath += () =>
         {
             isDead = true;
             Debug.Log("❌ Ворог мертвий. Зупиняє дії.");
-        };
 
-        if (player != null && player.TryGetComponent(out HealthSystem playerHealth))
-        {
-            playerHealth.OnDeath += () =>
+            // 🔥 Виклик екрану перемоги
+            VictoryScreenManager victory = FindFirstObjectByType<VictoryScreenManager>();
+            if (victory != null)
             {
-                Debug.Log("🎯 Гравець помер. Ворог більше не атакує.");
-                player = null;
-            };
-        }
+                victory.PlayVictoryScreen();
+            }
+            else
+            {
+                Debug.LogWarning("⚠️ VictoryScreenManager не знайдено на сцені!");
+            }
+        };
     }
 
     private void Update()
     {
-        if (player == null) return;
-
         if (isDead || player == null) return;
 
-        // 🔥 Пасивний скіл — BerserkMod (25% HP)
-        if (!isInBerserkMode && healthSystem.currentHealth <= healthSystem.maxHealth * 0.25f)
+        // 🔥 Berserk Mode (25% HP)
+        if (!isInBerserkMode && healthSystem.currentHealth <= healthSystem.maxHealth * 0.5f)
         {
             ActivateBerserkMode();
         }
@@ -60,37 +71,79 @@ public class EnemyController : MonoBehaviour
     {
         isInBerserkMode = true;
         nextAttackMultiplier = 3f;
-        Debug.Log("⚠️ Ворог активував BerserkMod! Усі атаки тепер x3 урон!");
+        Debug.Log("⚠️ Ворог активував BerserkMode!");
+        PlayEnemyAnimation("BerserkMode");
     }
 
     private void TryAttack()
     {
         SkillData selected = ChooseSkill();
-
         if (selected == null) return;
 
-        // Розрахунок шкоди
         int damage = Mathf.RoundToInt(selected.power * selected.multiplier * nextAttackMultiplier);
-
-        // Додаткова логіка для конкретних скілів
-        if (selected.skillName == "Freeze")
-        {
-            Debug.Log("❄️ Freeze активовано! Гравець отримає 10 шкоди та всі скіли заморожені на 2 сек.");
-            TryFreezePlayerSkills(2f); // 🔁 Ти маєш реалізувати цей метод у SkillManager
-        }
-        else if (selected.skillName == "PowerfulAttack")
-        {
-            Debug.Log("💥 PowerfulAttack активовано!");
-        }
 
         Debug.Log($"Ворог використовує {selected.skillName} і б'є на {damage} (x{nextAttackMultiplier})");
 
+        // 🎬 Анімації для різних скілів
+        switch (selected.skillName)
+        {
+            case "Attack":
+                PlayEnemyAnimation("Attack");
+                break;
+            case "BerserkAttack":
+                PlayEnemyAnimation("BerserkAttack");
+                break;
+            case "ComboAttack":
+                PlayEnemyAnimation("ComboAttack");
+                break;
+            case "FireAttack":
+                PlayEnemyAnimation("FireAttack");
+                break;
+            case "IceAttack":
+                PlayEnemyAnimation("IceAttack");
+                break;
+            case "BerserkMode":
+                PlayEnemyAnimation("BerserkMode");
+                break;
+        }
+
+        // 🔊 Звук
+        PlayEnemySound(selected.sfx);
+
+        // Наносимо шкоду
         if (player.TryGetComponent(out IDamageable dmg))
         {
             dmg.TakeDamage(damage);
         }
 
-        nextAttackMultiplier = 1f; // Скидаємо після кожної атаки
+        // Ефект Freeze
+        if (selected.skillName == "IceAttack")
+        {
+            Debug.Log("❄️ Freeze активовано! Вимикаємо скіли гравця на 2 сек.");
+            TryFreezePlayerSkills(2f);
+        }
+
+        nextAttackMultiplier = 1f;
+    }
+
+    private void PlayEnemyAnimation(string triggerName)
+    {
+        if (animator != null && animator.runtimeAnimatorController != null)
+        {
+            animator.SetTrigger(triggerName);
+        }
+        else
+        {
+            Debug.LogError("❌ У ворога немає Animator або він без контролера!");
+        }
+    }
+
+    private void PlayEnemySound(AudioClip clip)
+    {
+        if (clip != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }
     }
 
     private void TryFreezePlayerSkills(float duration)
@@ -112,18 +165,15 @@ public class EnemyController : MonoBehaviour
         {
             foreach (var skill in attackSkills)
             {
-                if (skill.skillName == "Berserk")
-                {
+                if (skill.skillName == "BerserkAttack")
                     return skill;
-                }
             }
         }
 
-        // Інакше випадкова атака
         int index = Random.Range(0, attackSkills.Length);
         return attackSkills[index];
     }
-    
+
     private IEnumerator FindPlayerAndSubscribe()
     {
         player = GameObject.FindWithTag("Player");

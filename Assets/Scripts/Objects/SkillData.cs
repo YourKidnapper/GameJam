@@ -10,10 +10,12 @@ public class SkillData : ScriptableObject
     public float multiplier = 1f;
 
     public int price;
-
     public Sprite icon;
     public int rarity;
 
     public SkillType type;
     public bool isPassive;
+
+    [Header("Audio")]
+    public AudioClip sfx;  // 🔊 звук цього скіла
 }

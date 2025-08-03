@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Animator CatAnimator;
+
     [Header("Audio Clips")]
     [SerializeField] private AudioClip catVoiceClip;
 
@@ -18,13 +19,38 @@ public class DialogueManager : MonoBehaviour
     public bool isInGambleMode { get; private set; } = false;
     private bool dialogueWasFinished = false;
 
-    [Header("Dialogue Lines")]
+    // 🔹 Перевірка чи це перший візит
+    private static bool firstVisitDone = false;
+
+    // 🔹 Перевірка чи гравець переміг у попередній сцені
+    public static bool justWonBattle = false;
+
+    [Header("First Time Dialogue")]
     [TextArea(3, 5)]
-    [SerializeField]
-    private string[] sentences = {
-        "Вітаю, довбойоб мій любий друже!",
-        "Цього разу я дам тобі нову зброю...",
-        "Не підведи мене!"
+    [SerializeField] private string[] firstTimeSentences = {
+        "Greetings! I'm Gambling King!",
+        "But my friends may call me Fluffy",
+        "But you're not my friend, of course",
+        "So I can only help you for gold"
+    };
+
+    [Header("Repeat Dialogue")]
+    [TextArea(3, 5)]
+    [SerializeField] private string[] repeatSentences = {
+        "You again? Let's see if you screw up this time..",
+        "Will you make a sacrifice to the cat god?"
+    };
+
+    [Header("Victory Dialogue")]
+    [TextArea(3, 5)]
+    [SerializeField] private string[] victorySentences = {
+        "Well done, champion!",
+        "Your claws were sharp this time.",
+        "This is the end of our game, but this loop can be repeated",
+        "The cat gods planned to do a lot more",
+        "But they couldn't in such a short time",
+        "But I'm glad it all turned out the way it is",
+        "Thank you for getting here"
     };
 
     [Header("Events")]
@@ -32,12 +58,30 @@ public class DialogueManager : MonoBehaviour
 
     private int index;
     private bool isTyping;
+    private string[] currentSentences;
 
     private void Start()
     {
         dialoguePanel.SetActive(true);
         index = 0;
-        StartCoroutine(TypeSentence(sentences[index]));
+
+        // 🔹 Вибір набору реплік
+        if (justWonBattle)
+        {
+            currentSentences = victorySentences;
+            justWonBattle = false; // скидаємо прапорець
+        }
+        else if (!firstVisitDone)
+        {
+            currentSentences = firstTimeSentences;
+            firstVisitDone = true;
+        }
+        else
+        {
+            currentSentences = repeatSentences;
+        }
+
+        StartCoroutine(TypeSentence(currentSentences[index]));
     }
 
     private void Update()
@@ -47,9 +91,9 @@ public class DialogueManager : MonoBehaviour
             if (isTyping)
             {
                 StopAllCoroutines();
-                dialogueText.text = sentences[index];
+                dialogueText.text = currentSentences[index];
                 isTyping = false;
-                CatAnimator.SetBool("IsTalking", false); // вимкнути говоріння
+                CatAnimator.SetBool("IsTalking", false);
             }
             else
             {
@@ -60,11 +104,12 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator TypeSentence(string sentence)
     {
-        SoundFXManager.instance?.PlaySoundEffect(catVoiceClip, transform, 0.5f);
+        if (catVoiceClip != null)
+            SoundFXManager.instance?.PlaySoundEffect(catVoiceClip, transform, 0.5f);
+
         isTyping = true;
         dialogueText.text = "";
 
-        // запуск анімації говоріння
         CatAnimator.SetBool("IsTalking", true);
 
         foreach (char letter in sentence.ToCharArray())
@@ -73,18 +118,16 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
 
-        // завершення анімації
         CatAnimator.SetBool("IsTalking", false);
-
         isTyping = false;
     }
 
     private void NextSentence()
     {
-        if (index < sentences.Length - 1)
+        if (index < currentSentences.Length - 1)
         {
             index++;
-            StartCoroutine(TypeSentence(sentences[index]));
+            StartCoroutine(TypeSentence(currentSentences[index]));
         }
         else if (!dialogueWasFinished)
         {

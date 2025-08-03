@@ -22,3 +22,4 @@ MonoBehaviour:
   rarity: 1
   type: 2
   isPassive: 1
+  sfx: {fileID: 8300000, guid: 0cc9fb3146f098946bff87f78f0521f9, type: 3}

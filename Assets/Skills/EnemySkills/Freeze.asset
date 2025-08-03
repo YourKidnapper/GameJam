@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161757e3c761d2a45b52b9097afdfeee, type: 3}
   m_Name: Freeze
   m_EditorClassIdentifier: 
-  skillName: Freeze
+  skillName: IceAttack
   description: You freeze enemy and deal 10 damage and enemy can't use his skills
     for 2 seconds
   cooldown: 2
@@ -23,3 +23,4 @@ MonoBehaviour:
   rarity: 3
   type: 0
   isPassive: 0
+  sfx: {fileID: 0}

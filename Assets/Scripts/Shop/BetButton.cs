@@ -26,7 +26,7 @@ public class BetButton : MonoBehaviour
 
         if (coins > 0)
         {
-            dialogueManager.ShowMessage($"{coins} монет – приймаю. Ось твій скіл!", true);
+            dialogueManager.ShowMessage($"{coins} coins – I accept. Here's your skill!", true);
             shopManager.GiveSkillByBet(coins);
             coinSpawner.ResetCoins();
             coinSpawner.BlockSpawning();
@@ -41,7 +41,7 @@ public class BetButton : MonoBehaviour
         else
         {
             // Ставка 0 – показуємо повідомлення та повертаємо до вибору
-            dialogueManager.ShowMessage("Ти нічого не поставив!");
+            dialogueManager.ShowMessage("You didn't bet anything!");
 
             // Повертаємо UI у попередній стан
             if (bowl != null) bowl.SetActive(false);

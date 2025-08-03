@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 161757e3c761d2a45b52b9097afdfeee, type: 3}
-  m_Name: PowerfulAttack
+  m_Name: FireAttack
   m_EditorClassIdentifier: 
-  skillName: Attack
-  description: User do a big and powerful attack and deal 10 damage
-  cooldown: 2
+  skillName: FireAttack
+  description: Player burns
+  cooldown: 4
   power: 10
   multiplier: 1
   price: 1000
-  icon: {fileID: -7668790182515900673, guid: 87ad6e7d524def74a8b9c0525e2d96e8, type: 3}
-  rarity: 2
+  icon: {fileID: 0}
+  rarity: 0
   type: 0
   isPassive: 0
   sfx: {fileID: 0}
