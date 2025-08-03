@@ -121,6 +121,11 @@ public class CoinSpawner : MonoBehaviour
 
     public void BlockSpawning()
     {
-    isSpawningBlocked = true;
+        isSpawningBlocked = true;
+    }
+    
+    public void UnblockSpawning()
+    {
+        isSpawningBlocked = false;
     }
 }
